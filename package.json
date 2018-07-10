@@ -1,0 +1,38 @@
+{
+  "name": "include-html",
+  "version": "0.0.0",
+  "description": "Include HTML files with a single attribute ",
+  "main": "gulpfile.babel.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreobriennz/include-html.git"
+  },
+  "keywords": [
+    "include",
+    "html",
+    "html",
+    "include"
+  ],
+  "author": "Andre OBrien <andreobrien.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreobriennz/include-html/issues"
+  },
+  "homepage": "https://github.com/andreobriennz/include-html#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}
