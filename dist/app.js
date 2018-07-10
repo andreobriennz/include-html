@@ -1,5 +1,24 @@
 'use strict';
 
+// escape XSS and style injection (doesn't escape HTML)
+var eXSS = function eXSS(value) {
+    return escapeXSS(value);
+};
+
+var escapeXSS = function escapeXSS(value) {
+    // for now, simply fail if there are any scripts or styles
+
+    return failIfUnsafe(value);
+};
+
+var failIfUnsafe = function failIfUnsafe(value) {
+    if (value.includes('<script') || value.includes('</script') || value.includes('<style') || value.includes('</style')) {
+        console.log('script or style tag detected. refusing to include.');
+        return '';
+    }
+
+    return value;
+};
 var getAllWithAttribute = function getAllWithAttribute(attribute) {
     var matchingElements = [];
     var allElements = document.getElementsByTagName('*');
@@ -21,7 +40,7 @@ var include = [];
 include['fetch'] = function (element, url) {
     fetch(url).then(function (data) {
         data.text().then(function (html) {
-            element.innerHTML = html;
+            element.innerHTML = eXSS(html);
 
             element.removeAttribute('data-include');
         });
