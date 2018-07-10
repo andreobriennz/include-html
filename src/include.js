@@ -21,7 +21,7 @@ include['fetch'] = ( element, url ) => {
     fetch(url)
     .then(function(data) {
         data.text().then(function(html) {
-            element.innerHTML = html;
+            element.innerHTML = eXSS( html );
             
             element.removeAttribute( 'data-include' );
         })
