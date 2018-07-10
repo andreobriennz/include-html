@@ -15,6 +15,7 @@ const settings = {
 
 const files = {
     scripts: [ 
+        'src/security.js',
         'src/include.js',
         'src/router.js',
     ],
